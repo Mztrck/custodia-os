@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+lb config \
+  --distribution trixie \
+  --architectures amd64 \
+  --binary-images iso-hybrid \
+  --debian-installer live \
+  --archive-areas "main contrib non-free-firmware" \
+  --linux-flavours amd64 \
+  --apt-indices false \
+  --memtest none \
+  --bootappend-live "boot=live components locales=pt_PT.UTF-8 keyboard-layouts=us timezone=UTC"
